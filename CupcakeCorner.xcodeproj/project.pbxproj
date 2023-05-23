@@ -38,6 +38,8 @@
 /* Begin PBXFileReference section */
 		3F3D02662A1D664F00008BF6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		3F3D02692A1D668C00008BF6 /* ViewSection1dot2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSection1dot2.swift; sourceTree = "<group>"; };
+		3F3D026B2A1D73A700008BF6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3F3D026D2A1D73BF00008BF6 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		3F4756702A198D1400676E40 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4756732A198D1400676E40 /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		3F4756752A198D1400676E40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,9 +94,19 @@
 			path = section1dot2;
 			sourceTree = "<group>";
 		};
+		3F3D026C2A1D73B000008BF6 /* _docs */ = {
+			isa = PBXGroup;
+			children = (
+				3F3D026D2A1D73BF00008BF6 /* TODO.md */,
+			);
+			path = _docs;
+			sourceTree = "<group>";
+		};
 		3F4756672A198D1300676E40 = {
 			isa = PBXGroup;
 			children = (
+				3F3D026C2A1D73B000008BF6 /* _docs */,
+				3F3D026B2A1D73A700008BF6 /* README.md */,
 				3F4756722A198D1400676E40 /* CupcakeCorner */,
 				3F4756832A198D1600676E40 /* CupcakeCornerTests */,
 				3F47568D2A198D1600676E40 /* CupcakeCornerUITests */,
