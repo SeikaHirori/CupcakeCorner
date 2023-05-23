@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3D02642A1D64FB00008BF6 /* section1dot2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D02632A1D64FB00008BF6 /* section1dot2.swift */; };
 		3F4756742A198D1400676E40 /* CupcakeCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4756732A198D1400676E40 /* CupcakeCornerApp.swift */; };
 		3F4756762A198D1400676E40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4756752A198D1400676E40 /* ContentView.swift */; };
 		3F4756782A198D1500676E40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4756772A198D1500676E40 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F3D02632A1D64FB00008BF6 /* section1dot2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = section1dot2.swift; sourceTree = "<group>"; };
 		3F4756702A198D1400676E40 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4756732A198D1400676E40 /* CupcakeCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerApp.swift; sourceTree = "<group>"; };
 		3F4756752A198D1400676E40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F3D02622A1D64B000008BF6 /* Part_1 */ = {
+			isa = PBXGroup;
+			children = (
+				3F3D02632A1D64FB00008BF6 /* section1dot2.swift */,
+			);
+			path = Part_1;
+			sourceTree = "<group>";
+		};
 		3F4756672A198D1300676E40 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		3F4756722A198D1400676E40 /* CupcakeCorner */ = {
 			isa = PBXGroup;
 			children = (
+				3F3D02622A1D64B000008BF6 /* Part_1 */,
 				3F4756732A198D1400676E40 /* CupcakeCornerApp.swift */,
 				3F4756752A198D1400676E40 /* ContentView.swift */,
 				3F4756772A198D1500676E40 /* Assets.xcassets */,
@@ -259,6 +270,7 @@
 			files = (
 				3F4756762A198D1400676E40 /* ContentView.swift in Sources */,
 				3F4756742A198D1400676E40 /* CupcakeCornerApp.swift in Sources */,
+				3F3D02642A1D64FB00008BF6 /* section1dot2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
