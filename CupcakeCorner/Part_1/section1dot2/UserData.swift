@@ -15,4 +15,8 @@ class UserData: ObservableObject, Codable {
         case name
     }
     
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+    }
 }
