@@ -7,6 +7,7 @@ Link: [https://www.hackingwithswift.com/100/swiftui/49](https://www.hackingwiths
 - [x] Cupcake Corner: Introduction
 - [x] Adding Codable conformance for @Published properties
 - [ ] Sending and receiving Codable data with URLSession and SwiftUI
+    - WIP
 - [ ] Loading an image from a remote server
 - [ ] Validating and disabling forms
 
