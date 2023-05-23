@@ -9,5 +9,10 @@ import Foundation
 
 
 class UserData: ObservableObject, Codable {
-    var name: String = "Paul Hudson"
+    @Published var name: String = "Paul Hudson"
+    
+    enum CodingKeys: CodingKey {
+        case name
+    }
+    
 }
