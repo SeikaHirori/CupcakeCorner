@@ -18,7 +18,14 @@ class Order: ObservableObject {
     @Published var type: Int = 0
     @Published var quantity: Int = 3
     
-    @Published var specialRequestEnable: Bool = false
+    @Published var specialRequestEnable: Bool = false {
+        didSet {
+            if specialRequestEnable == false {
+                extraFrosting = false
+                addSprinkles = false
+            }
+        }
+    }
     @Published var extraFrosting: Bool = false
     @Published var addSprinkles: Bool = false
 }
