@@ -13,6 +13,25 @@ class Order: ObservableObject, Codable {
         case type, quantity, extraFrosting, addSprinkles, name, streetAddress, city, zip
     }
     
+    init() { }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        type = try container.decode(Int.self, forKey: .type)
+        quantity = try container.decode(Int.self, forKey: .quantity)
+        
+        extraFrosting = try container.decode(Bool.self, forKey: .extraFrosting)
+        addSprinkles = try container.decode(Bool.self, forKey: .addSprinkles)
+        
+        name = try container.decode(String.self, forKey: .name)
+        streetAddress = try container.decode(String.self, forKey: .streetAddress)
+        city = try container.decode(String.self, forKey: .city)
+        zip = try container.decode(String.self, forKey: .zip)
+        
+        
+    }
+    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
@@ -29,6 +48,8 @@ class Order: ObservableObject, Codable {
         
         
     }
+    
+    
     
     // Cake
     static let types: [String] = [
