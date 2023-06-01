@@ -55,6 +55,22 @@ struct CheckoutView: View {
             print("Failed to encode order")
             return
         }
+        
+        let url: URL = URL(string: "https://reqres.in/api/cupcakes")!
+        var request:URLRequest = URLRequest(url: url)
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "Post"
+        
+        do {
+            let (data,_) = try await URLSession.shared.upload(for: request, from: encoded)
+            
+            // handle the result
+            
+        } catch {
+            print("Checkout failed")
+            print("Error: \(error)")
+        }
     }
     
     
