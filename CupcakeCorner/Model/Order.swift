@@ -8,6 +8,8 @@
 import SwiftUI
 
 class Order: ObservableObject {
+    
+    // Cake
     static let types: [String] = [
         "Vanilla",
         "Strawberry",
@@ -28,5 +30,11 @@ class Order: ObservableObject {
     }
     @Published var extraFrosting: Bool = false
     @Published var addSprinkles: Bool = false
+    
+    // Address
+    @Published var name: String = ""
+    @Published var streetAddress: String = ""
+    @Published var city: String = ""
+    @Published var zip:String  = ""
 }
 
