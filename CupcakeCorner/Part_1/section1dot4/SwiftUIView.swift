@@ -18,7 +18,7 @@ struct SwiftUIView: View {
                     .scaledToFit()
                 
             } placeholder: {
-                Color.red
+                ProgressView()
             }
             .frame(width: 200, height: 200)
         }
