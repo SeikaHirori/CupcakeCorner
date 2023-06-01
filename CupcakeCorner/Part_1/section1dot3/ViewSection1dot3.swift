@@ -35,6 +35,15 @@ struct ViewSection1dot3: View {
             print("Invalid URL")
             return
         }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            
+            // More code to come
+        } catch {
+            print("Invalid data")
+            print("Error code: \(error)")
+        }
     }
 }
 
