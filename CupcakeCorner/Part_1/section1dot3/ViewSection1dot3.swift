@@ -29,7 +29,12 @@ struct ViewSection1dot3: View {
     }
     
     func loadData() async {
+        let link_itunes: String = "https://itunes.apple.com/search?term=taylor+swift&entity=song"
         
+        guard let url = URL(string: link_itunes) else {
+            print("Invalid URL")
+            return
+        }
     }
 }
 
