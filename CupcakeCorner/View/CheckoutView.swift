@@ -11,7 +11,33 @@ struct CheckoutView: View {
     @ObservedObject var order:Order
     
     var body: some View {
-        Text("Hello, checking out this 美味しい cake :D")
+
+        return VStack {
+            ScrollView {
+                VStack {
+                    
+                    // This is personal touch for handling and displaying error
+                    AsyncImage(url: URL(string: "https://hws.dev/img/cupcakes@3x.jpg")) {
+                        phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .scaledToFit()
+                        } else if phase.error != nil {
+                            let errorMessage: String = phase.error?.localizedDescription ?? "Something went wrong"
+                            
+                            Text("Error: \(errorMessage)")
+                        } else {
+                            ProgressView()
+                        }
+                    }
+                    .frame(height: 233)
+                }
+                
+            }
+            .navigationTitle("Check out")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

@@ -12,6 +12,7 @@ struct loadingAsyncImageView: View {
         return VStack {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             
+            
             AsyncImage(url: URL(string: "https://hws.dev/img/logo.png")) { phase in
                 if let image = phase.image {
                     image
