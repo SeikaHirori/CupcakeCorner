@@ -20,6 +20,7 @@
 		3F4756912A198D1600676E40 /* CupcakeCornerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4756902A198D1600676E40 /* CupcakeCornerUITestsLaunchTests.swift */; };
 		3F9091A02A29163600DF3D34 /* loadingAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F90919F2A29163600DF3D34 /* loadingAsyncImageView.swift */; };
 		3F9091A52A2916F700DF3D34 /* validatingFormsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9091A42A2916F700DF3D34 /* validatingFormsView.swift */; };
+		3F9091A92A291D1800DF3D34 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9091A82A291D1800DF3D34 /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		3F90919E2A29159400DF3D34 /* note.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = note.md; sourceTree = "<group>"; };
 		3F90919F2A29163600DF3D34 /* loadingAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingAsyncImageView.swift; sourceTree = "<group>"; };
 		3F9091A42A2916F700DF3D34 /* validatingFormsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validatingFormsView.swift; sourceTree = "<group>"; };
+		3F9091A82A291D1800DF3D34 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,8 @@
 		3F4756722A198D1400676E40 /* CupcakeCorner */ = {
 			isa = PBXGroup;
 			children = (
+				3F9091A72A291D0900DF3D34 /* View */,
+				3F9091A62A291D0100DF3D34 /* Model */,
 				3F3D02622A1D64B000008BF6 /* Part_1 */,
 				3F4756732A198D1400676E40 /* CupcakeCornerApp.swift */,
 				3F4756752A198D1400676E40 /* ContentView.swift */,
@@ -197,6 +201,21 @@
 				3F9091A42A2916F700DF3D34 /* validatingFormsView.swift */,
 			);
 			path = section1dot5;
+			sourceTree = "<group>";
+		};
+		3F9091A62A291D0100DF3D34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F9091A82A291D1800DF3D34 /* Order.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F9091A72A291D0900DF3D34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +351,7 @@
 				3F9091A02A29163600DF3D34 /* loadingAsyncImageView.swift in Sources */,
 				3F9091A52A2916F700DF3D34 /* validatingFormsView.swift in Sources */,
 				3F3D02732A1D758B00008BF6 /* ViewSection1dot3.swift in Sources */,
+				3F9091A92A291D1800DF3D34 /* Order.swift in Sources */,
 				3F4756762A198D1400676E40 /* ContentView.swift in Sources */,
 				3F4756742A198D1400676E40 /* CupcakeCornerApp.swift in Sources */,
 				3F3D02702A1D750D00008BF6 /* SendReceive.swift in Sources */,
