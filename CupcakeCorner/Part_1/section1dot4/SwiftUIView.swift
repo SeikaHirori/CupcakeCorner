@@ -12,7 +12,15 @@ struct SwiftUIView: View {
         return VStack {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             
-            AsyncImage(url: URL(string: "https://hws.dev/img/logo.png"), scale: 3)
+            AsyncImage(url: URL(string: "https://hws.dev/img/logo.png")) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                
+            } placeholder: {
+                Color.red
+            }
+            .frame(width: 200, height: 200)
         }
     }
 }
