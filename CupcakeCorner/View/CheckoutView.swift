@@ -10,6 +10,9 @@ import SwiftUI
 struct CheckoutView: View {
     @ObservedObject var order:Order
     
+    @State private var confirmation: String = ""
+    @State private var showingConfirmation: Bool = false
+    
     var body: some View {
 
         return VStack {
