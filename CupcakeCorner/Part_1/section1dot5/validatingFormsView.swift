@@ -12,7 +12,7 @@ struct validatingFormsView: View {
     @State private var email:String = ""
     
     var disableForm:Bool {
-        username.count < 5 || email.count < 5
+        username.count < 5 || email.count < 5 || !email.contains("@") // third condition is personal touch
     }
     
     var body: some View {
