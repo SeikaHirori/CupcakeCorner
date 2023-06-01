@@ -11,6 +11,10 @@ struct validatingFormsView: View {
     @State private var username:String = ""
     @State private var email:String = ""
     
+    var disableForm:Bool {
+        username.count < 5 || email.count < 5
+    }
+    
     var body: some View {
         return VStack {
 
@@ -25,7 +29,7 @@ struct validatingFormsView: View {
                         print("Creating account...")
                     }
                 }
-                .disabled(username.isEmpty || email.isEmpty)
+                .disabled(disableForm)
             }
         }
     }
