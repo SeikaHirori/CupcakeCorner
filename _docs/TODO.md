@@ -14,6 +14,7 @@ Link: [https://www.hackingwithswift.com/100/swiftui/49](https://www.hackingwiths
 # Part 2
 Link: [https://www.hackingwithswift.com/100/swiftui/50](https://www.hackingwithswift.com/100/swiftui/50)
 
-- [] Taking basic order details
-- [] Checking for a valid address
-- [] Preparing for checkout
+- [x] Taking basic order details
+- [ ] Checking for a valid address
+    - WIP
+- [ ] Preparing for checkout
