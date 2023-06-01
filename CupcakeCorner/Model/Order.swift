@@ -7,7 +7,12 @@
 
 import SwiftUI
 
-class Order: ObservableObject {
+class Order: ObservableObject, Codable {
+    // Confirming to Codable
+    enum CodingKeys: CodingKey {
+        case type, quantity, extraFrosting, addSprinkles, name, streetAddress, city, zip
+    }
+    
     
     // Cake
     static let types: [String] = [
