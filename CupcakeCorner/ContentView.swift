@@ -23,6 +23,16 @@ struct ContentView: View {
                         
                         Stepper("Number of cakes: \(order.quantity)", value: $order.quantity, in: 3...20)
                     }
+                    
+                    Section {
+                        Toggle("Any special requests?", isOn: $order.specialRequestEnable.animation())
+                        
+                        if order.specialRequestEnable {
+                            Toggle("Add extra frosting", isOn: $order.extraFrosting)
+                            
+                            Toggle("Add extra sprinkles", isOn: $order.addSprinkles)
+                        }
+                    }
                 }
                 .navigationTitle("Cupcake Corner")
             }
