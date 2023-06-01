@@ -5,7 +5,7 @@
 //  Created by Seika Hirori on 6/1/23.
 //
 
-import Foundation
+import SwiftUI
 
 class Order: ObservableObject {
     static let types: [String] = [
