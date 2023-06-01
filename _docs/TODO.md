@@ -16,5 +16,11 @@ Link: [https://www.hackingwithswift.com/100/swiftui/50](https://www.hackingwiths
 
 - [x] Taking basic order details
 - [x] Checking for a valid address
-- [ ] Preparing for checkout
+- [x] Preparing for checkout
+
+# Part 3
+Link: [https://www.hackingwithswift.com/100/swiftui/51](https://www.hackingwithswift.com/100/swiftui/51)
+
+- [x] Encoding an ObservableObject class
+- [ ] Sending and receiving orders over the internet
     - WIP
