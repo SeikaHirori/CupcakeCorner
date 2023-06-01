@@ -40,6 +40,9 @@ struct ViewSection1dot3: View {
             let (data, _) = try await URLSession.shared.data(from: url)
             
             // More code to come
+            if let decodeResponse = try? JSONDecoder().decode(Response.self, from: data) {
+                results = decodeResponse.results
+            }
         } catch {
             print("Invalid data")
             print("Error code: \(error)")
