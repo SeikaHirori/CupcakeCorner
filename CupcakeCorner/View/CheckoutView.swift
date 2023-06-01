@@ -35,8 +35,12 @@ struct CheckoutView: View {
                     
                     Text("Your total is \(order.cost, format: .currency(code: "USD"))")
                     
-                    Button("Place Order", action: { })
-                        .padding()
+                    Button("Place Order") {
+                        task {
+                           await placeOrder()
+                        }
+                    }
+                    .padding()
                 }
                 
             }
@@ -44,6 +48,17 @@ struct CheckoutView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
     }
+    
+    func placeOrder() async {
+        guard let encoded = try? JSONEncoder().encode(order) else {
+            
+            print("Failed to encode order")
+            return
+        }
+    }
+    
+    
+    
 }
 
 struct CheckoutView_Previews: PreviewProvider {
