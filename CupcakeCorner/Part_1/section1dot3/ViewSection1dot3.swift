@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct ViewSection1dot3: View {
+    @State private var results: [Result] = [Result]()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        return VStack {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            
+            List(results, id: \.trackId) { item in
+                VStack(alignment: .leading) {
+                    Text(item.trackName)
+                        .font(.headline)
+                    Text(item.collectionName)
+                }
+            }
+            .task {
+                await loadData()
+            }
+        }
+        
+    }
+    
+    func loadData() async {
+        
     }
 }
 
