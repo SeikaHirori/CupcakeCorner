@@ -80,9 +80,66 @@ class Order: ObservableObject, Codable {
     @Published var zip:String  = ""
     
     var hasValidAddress: Bool {
+        
+        // Original version
         if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+            var emptyFields:String = ""
+            
+            if name.isEmpty {
+                emptyFields += "name\n"
+            }
+            
+            if streetAddress.isEmpty {
+                emptyFields += "street address\n"
+            }
+            
+            if city.isEmpty {
+                emptyFields += "city\n"
+            }
+            
+            if zip.isEmpty {
+                emptyFields += "zip\n"
+            }
+            
+            print("The following fields are empty:")
+            print(emptyFields)
             return false
         }
+        
+        // Challenge #1
+        // rev #1: Try to remove whitespace to check if the string is empty.
+        let trimmedName = name.trimmingCharacters(in: .whitespaces)
+        let trimmedStreetAddress = streetAddress.trimmingCharacters(in: .whitespaces)
+        let trimmedCity = city.trimmingCharacters(in: .whitespaces)
+        let trimmedZip = zip.trimmingCharacters(in: .whitespaces)
+              
+        if trimmedName.isEmpty || trimmedStreetAddress.isEmpty || trimmedCity.isEmpty || trimmedZip.isEmpty {
+            
+            var onlyWhiteSpace: String = ""
+            
+            if trimmedName.isEmpty {
+                onlyWhiteSpace += "name\n"
+            }
+            
+            if trimmedStreetAddress.isEmpty {
+                onlyWhiteSpace += "street address\n"
+            }
+            
+            if trimmedCity.isEmpty {
+                onlyWhiteSpace += "city\n"
+            }
+            
+            if trimmedZip.isEmpty {
+                onlyWhiteSpace += "zip\n"
+            }
+            
+            print("The following fields contain only whitespace:")
+            print(onlyWhiteSpace)
+            
+            return false
+        }
+        
+
         
         return true
     }

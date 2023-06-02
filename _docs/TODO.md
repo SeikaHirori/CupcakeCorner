@@ -22,5 +22,14 @@ Link: [https://www.hackingwithswift.com/100/swiftui/50](https://www.hackingwiths
 Link: [https://www.hackingwithswift.com/100/swiftui/51](https://www.hackingwithswift.com/100/swiftui/51)
 
 - [x] Encoding an ObservableObject class
-- [ ] Sending and receiving orders over the internet
-    - WIP
+- [x] Sending and receiving orders over the internet
+
+# Part 4
+## Challenge
+
+Link: [https://www.hackingwithswift.com/books/ios-swiftui/cupcake-corner-wrap-up](https://www.hackingwithswift.com/books/ios-swiftui/cupcake-corner-wrap-up)
+
+
+- [x] Our address fields are currently considered valid if they contain anything, even if it’s just only whitespace. Improve the validation to make sure a string of pure whitespace is invalid.
+- [ ] If our call to placeOrder() fails – for example if there is no internet connection – show an informative alert for the user. To test this, try commenting out the request.httpMethod = "POST" line in your code, which should force the request to fail.
+- [ ] For a more challenging task, see if you can convert our data model from a class to a struct, then create an ObservableObject class wrapper around it that gets passed around. This will result in your class having one @Published property, which is the data struct inside it, and should make supporting Codable on the s
