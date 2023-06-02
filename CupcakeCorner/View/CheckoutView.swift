@@ -13,6 +13,9 @@ struct CheckoutView: View {
     @State private var confirmationMessage: String = ""
     @State private var showingConfirmation: Bool = false
     
+    @State private var errorMessage: String = ""
+    @State private var showingError: Bool = false
+    
     var body: some View {
 
         return VStack {
@@ -27,9 +30,12 @@ struct CheckoutView: View {
                                 .resizable()
                                 .scaledToFit()
                         } else if phase.error != nil {
-                            let errorMessage: String = phase.error?.localizedDescription ?? "Something went wrong"
-                            
-                            Text("Error: \(errorMessage)")
+
+                            // Challenge #2
+                            Image(systemName: "antenna.radiowaves.left.and.right.slash")
+                                .onAppear {
+                                    newErrorMessage(newError: phase.error?.localizedDescription)
+                                }
                         } else {
                             ProgressView()
                         }
@@ -54,6 +60,12 @@ struct CheckoutView: View {
             } message: {
                 Text(confirmationMessage)
             }
+            .alert("Error message :O", isPresented: $showingError) {
+                Button("OK") { print(errorMessage) }
+            } message: {
+                Text(errorMessage)
+            }
+            
         }
     }
     
@@ -68,7 +80,9 @@ struct CheckoutView: View {
         var request:URLRequest = URLRequest(url: url)
         
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "Post"
+        
+        
+        request.httpMethod = "Post" // Disabled for testing offline
         
         do {
             let (data,_) = try await URLSession.shared.upload(for: request, from: encoded)
@@ -81,9 +95,18 @@ struct CheckoutView: View {
         } catch {
             print("Checkout failed")
             print("Error: \(error)")
+            
+            // Challenge #2
+            newErrorMessage(newError: error.localizedDescription)
         }
     }
     
+    // Challenge #2
+    func newErrorMessage(newError : String?) -> Void {
+        errorMessage = newError ?? "Something went wrong"
+        showingError = true
+
+    }
     
     
 }
