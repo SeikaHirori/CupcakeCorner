@@ -9,8 +9,8 @@ import SwiftUI
 
 
 // Challenge #3 - Storing data struct
-class Order: ObservableObject, Codable {
-    @Published var uniqueOrder: structOrder = structOrder()
+class ClassOrder: ObservableObject, Codable {
+    @Published var uniqueOrder: Order = Order()
     
     enum CodingKeys: CodingKey {
         case uniqueOrder
@@ -21,7 +21,7 @@ class Order: ObservableObject, Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        uniqueOrder = try container.decode(structOrder.self, forKey: .uniqueOrder)
+        uniqueOrder = try container.decode(Order.self, forKey: .uniqueOrder)
     }
     
     func encode(to encoder: Encoder) throws {

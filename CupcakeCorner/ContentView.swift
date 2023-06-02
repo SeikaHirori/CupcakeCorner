@@ -8,35 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var order:Order = Order()
+    @StateObject var currentOrder:ClassOrder = ClassOrder()
     
     var body: some View {
         return VStack {
             NavigationStack {
                 Form {
                     Section {
-                        Picker("Select your cake type", selection: $order.type) {
-                            ForEach(Order.types.indices) {
-                                Text(Order.types[$0])
+                        Picker("Select your cake type", selection: currentOrder.uniqueOrder.type) {
+                            ForEach(currentOrder.uniqueOrder.types.indices) {
+                                Text(currentOrder.uniqueOrder.types[$0])
                             }
                         }
                         
-                        Stepper("Number of cakes: \(order.quantity)", value: $order.quantity, in: 3...20)
+                        Stepper("Number of cakes: \(currentOrder.uniqueOrder.quantity)", value: currentOrder.uniqueOrder.quantity, in: 3...20)
                     }
                     
                     Section {
-                        Toggle("Any special requests?", isOn: $order.specialRequestEnable.animation())
+                        Toggle("Any special requests?", isOn: $currentOrder.uniqueOrder.specialRequestEnable.animation())
                         
-                        if order.specialRequestEnable {
-                            Toggle("Add extra frosting", isOn: $order.extraFrosting)
+                        if currentOrder.uniqueOrder.specialRequestEnable {
+                            Toggle("Add extra frosting", isOn: $currentOrder.uniqueOrder.extraFrosting)
                             
-                            Toggle("Add extra sprinkles", isOn: $order.addSprinkles)
+                            Toggle("Add extra sprinkles", isOn: $currentOrder.uniqueOrder.addSprinkles)
                         }
                     }
                     
                     Section {
                         NavigationLink {
-                            AddressView(order: order)
+                            AddressView(order: currentOrder.uniqueOrder)
                         } label: {
                             Text("Delivery details")
                         }
