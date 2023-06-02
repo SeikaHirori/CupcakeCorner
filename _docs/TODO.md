@@ -34,4 +34,4 @@ Link: [https://www.hackingwithswift.com/books/ios-swiftui/cupcake-corner-wrap-up
     - check module "Order.swift" for answer implementation
 - [x] If our call to placeOrder() fails – for example if there is no internet connection – show an informative alert for the user. To test this, try commenting out the request.httpMethod = "POST" line in your code, which should force the request to fail.
     - check module "CheckoutView.swift" for answerfor challenge
-- [ ] For a more challenging task, see if you can convert our data model from a class to a struct, then create an ObservableObject class wrapper around it that gets passed around. This will result in your class having one @Published property, which is the data struct inside it, and should make supporting Codable on the struct much easier.
+- [x] For a more challenging task, see if you can convert our data model from a class to a struct, then create an ObservableObject class wrapper around it that gets passed around. This will result in your class having one @Published property, which is the data struct inside it, and should make supporting Codable on the struct much easier.

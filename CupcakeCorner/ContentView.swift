@@ -13,15 +13,15 @@ struct ContentView: View {
     var body: some View {
         return VStack {
             NavigationStack {
-                Form {
+                List {
                     Section {
-                        Picker("Select your cake type", selection: currentOrder.uniqueOrder.type) {
+                        Picker("Select your cake type", selection: $currentOrder.uniqueOrder.type) {
                             ForEach(currentOrder.uniqueOrder.types.indices) {
                                 Text(currentOrder.uniqueOrder.types[$0])
                             }
                         }
                         
-                        Stepper("Number of cakes: \(currentOrder.uniqueOrder.quantity)", value: currentOrder.uniqueOrder.quantity, in: 3...20)
+                        Stepper("Number of cakes: \(currentOrder.uniqueOrder.quantity)", value: $currentOrder.uniqueOrder.quantity, in: 3...20)
                     }
                     
                     Section {
@@ -36,7 +36,7 @@ struct ContentView: View {
                     
                     Section {
                         NavigationLink {
-                            AddressView(order: currentOrder.uniqueOrder)
+                            AddressView(order: currentOrder)
                         } label: {
                             Text("Delivery details")
                         }

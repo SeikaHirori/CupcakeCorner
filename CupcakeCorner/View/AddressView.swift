@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AddressView: View {
-    @State var order:Order
+//    @State var order:Order
+    @ObservedObject var order: ClassOrder
     
     var body: some View {
         return VStack {
@@ -16,10 +17,10 @@ struct AddressView: View {
                 
                 // Address info
                 Section("Address") {
-                    TextField("Name", text: $order.name)
-                    TextField("Street Address", text: $order.streetAddress)
-                    TextField("City", text: $order.city)
-                    TextField("Zip", text: $order.zip)
+                    TextField("Name", text: $order.uniqueOrder.name)
+                    TextField("Street Address", text: $order.uniqueOrder.streetAddress)
+                    TextField("City", text: $order.uniqueOrder.city)
+                    TextField("Zip", text: $order.uniqueOrder.zip)
                 }
                 
                 // Checkout cart
@@ -30,7 +31,7 @@ struct AddressView: View {
                         Text("Check out")
                     }
                 }
-                .disabled(order.hasValidAddress == false)
+                .disabled(order.uniqueOrder.hasValidAddress == false)
 
             }
         }
@@ -39,6 +40,6 @@ struct AddressView: View {
 
 struct AddressView_Previews: PreviewProvider {
     static var previews: some View {
-        AddressView(order: Order())
+        AddressView(order: ClassOrder())
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @State var order:Order
+    @State var order:ClassOrder
     
     @State private var confirmationMessage: String = ""
     @State private var showingConfirmation: Bool = false
@@ -42,7 +42,7 @@ struct CheckoutView: View {
                     }
                     .frame(height: 233)
                     
-                    Text("Your total is \(order.cost, format: .currency(code: "USD"))")
+                    Text("Your total is \(order.uniqueOrder.cost, format: .currency(code: "USD"))")
                     
                     Button("Place Order") {
                         Task {
@@ -70,7 +70,7 @@ struct CheckoutView: View {
     }
     
     func placeOrder() async {
-        guard let encoded = try? JSONEncoder().encode(order) else {
+        guard let encoded = try? JSONEncoder().encode(order.uniqueOrder) else {
             
             print("Failed to encode order")
             return
@@ -89,7 +89,7 @@ struct CheckoutView: View {
             
             // handle the result
             let decoderOrder = try JSONDecoder().decode(Order.self, from: data)
-            confirmationMessage = "Your order for \(decoderOrder.quantity)x \(Order.types[decoderOrder.type].lowercased()) cupercakes is on its way!"
+            confirmationMessage = "Your order for \(decoderOrder.quantity)x \(decoderOrder.types[decoderOrder.type].lowercased()) cupercakes is on its way!"
             showingConfirmation = true
             
         } catch {
@@ -113,6 +113,6 @@ struct CheckoutView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(order: Order())
+        CheckoutView(order: ClassOrder())
     }
 }

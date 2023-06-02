@@ -10,7 +10,7 @@ import SwiftUI
 struct Order: Codable {
 
 
-    static let types: [String] = [
+    let types: [String] = [
         "Vanilla",
         "Strawberry",
         "Chocolate",
