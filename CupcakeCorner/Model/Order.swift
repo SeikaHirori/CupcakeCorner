@@ -49,8 +49,6 @@ class Order: ObservableObject, Codable {
         
     }
     
-    
-    
     // Cake
     static let types: [String] = [
         "Vanilla",
